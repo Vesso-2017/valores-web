@@ -93,7 +93,10 @@ if not st.session_state.autenticado:
 
     if entrar:
 
-        if usuario == "admin" and senha == "1234":
+       if (
+          usuario == st.secrets["login"]["usuario"]
+          and senha == st.secrets["login"]["senha"]       
+       ):
 
             st.session_state.autenticado = True
             st.rerun()
